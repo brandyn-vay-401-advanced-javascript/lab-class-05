@@ -1,7 +1,5 @@
 const Categories = require('../../models-modular/categories/categories.js');
 
-let categories = new Categories();
-
 const supergoose = require('../supergoose.js');
 
 describe('Categories Model (Modular)', () => {
