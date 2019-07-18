@@ -7,7 +7,7 @@ class Model {
    * Model Constructor
    * @param schema {object} - mongo schema
    */
-  constructor(this.) {
+  constructor() {
 
   }
 
