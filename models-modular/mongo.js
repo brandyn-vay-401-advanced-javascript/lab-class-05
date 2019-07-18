@@ -7,8 +7,8 @@ class Model {
    * Model Constructor
    * @param schema {object} - mongo schema
    */
-  constructor(schema) {
-    this.schema = schema;
+  constructor() {
+
   }
 
 
@@ -20,10 +20,10 @@ class Model {
    */
   get(_id) {
     if (_id) {
-      return schema.findOne({ _id });
+      return this.schema.findOne({ _id });
     }
     else {
-      return schema.find({});
+      return this.schema.find({});
     }
   }
 
@@ -33,7 +33,7 @@ class Model {
    * @returns {*}
    */
   create(record) {
-    let newRecord = new schema(record);
+    let newRecord = new this.schema(record);
     return newRecord.save();
   }
 
@@ -44,7 +44,7 @@ class Model {
    * @returns {*}
    */
   update(_id, record) {
-    return schema.findByIdAndUpdate(_id, record, { new: true });
+    return this.schema.findByIdAndUpdate(_id, record, { new: true });
   }
 
   /**
@@ -53,7 +53,7 @@ class Model {
    * @returns {*}
    */
   delete(_id) {
-    return schema.findByIdAndDelete(_id);
+    return this.schema.findByIdAndDelete(_id);
   }
 
 }

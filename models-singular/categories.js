@@ -9,23 +9,25 @@ class Categories {
   }
 
   get(_id) {
-    // Call the appropriate mongoose method to get
-    // one or more records
-    // If 1, return it as a plain object
-    // If 2, return it as an object like this:
-    // { count: ##, results: [{}, {}] }
+    if (_id) {
+      return this.schema.find({ _id });
+    }
+    else {
+      return this.schema.find({});
+    }
   }
 
   create(record) {
-    // Call the appropriate mongoose method to create a new record
+    let newRecord = new this.schema(record);
+    return newRecord.save();
   }
 
   update(_id, record) {
-    // Call the appropriate mongoose method to update a record
+    return this.schema.findByIdAndUpdate(_id, record, { new: true });
   }
 
   delete(_id) {
-    // Call the appropriate mongoose method to delete a record
+    return this.schema.findByIdAndDelete(_id);
   }
 
 }

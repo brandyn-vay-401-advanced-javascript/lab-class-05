@@ -1,6 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const Categories = require('./models-modular/categories/categories.js');
 
 // Require your model
 
@@ -8,9 +9,11 @@ const mongoose = require('mongoose');
 const MONGOOSE_URI = 'mongodb://localhost:27017/class05';
 
 // Connect
-mongoose.connect(...);
+mongoose.connect(MONGOOSE_URI);
 
 // Do some work
+
+
 
 // Disconnect
 mongoose.disconnect();
