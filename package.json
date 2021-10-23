@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose",
-    "test-watch": "jest --watchAll --verbose"
+    "test-watch": "jest --watchAll --verbose",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "jest": {
     "testEnvironment": "node"
@@ -20,7 +22,8 @@
     "mongoose": "^5.6.5",
     "supergoose": "^0.2.6",
     "supertest": "^4.0.2",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "@snyk/protect": "latest"
   },
   "repository": {
     "type": "git",
@@ -29,5 +32,6 @@
   "bugs": {
     "url": "https://github.com/brandyn-vay-401-advanced-javascript/lab-class-05/issues"
   },
-  "homepage": "https://github.com/brandyn-vay-401-advanced-javascript/lab-class-05#readme"
+  "homepage": "https://github.com/brandyn-vay-401-advanced-javascript/lab-class-05#readme",
+  "snyk": true
 }
